@@ -4,13 +4,12 @@ gem 'rails', '3.2.22'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
 gem 'easypost'
 gem 'haml'
 
 group :development do
   gem 'debugger'
+  gem 'sqlite3'
 end
 
 group :test do
@@ -33,6 +32,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'bootstrap-sass', '~> 3.2.0'
   gem 'autoprefixer-rails'
+end
+
+group :production do
+  gem 'pg'
 end
 
 gem 'jquery-rails'
