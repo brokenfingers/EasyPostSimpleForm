@@ -1,0 +1,89 @@
+%div.container
+  = form_tag shipments_path, :class => 'form-horizontal' do
+    %div.row
+      %h3 Origin Address
+
+    = hidden_field :from_address, :role, :value => Address::TYPES[0]
+
+    .form-group
+      = label :from_address, :company, 'Company Name:', :class => 'control-label'
+      = text_field :from_address, :company, :class => 'form-control'
+
+    .form-group
+      = label :from_address, :street1, "Street Address:", :class => 'control-label'
+      = text_field :from_address, :street1, :class => 'form-control'
+
+    .form-group
+      = label :from_address, :street2, "Alternative Address:", :class => 'control-label'
+      = text_field :from_address, :street2, :class => 'form-control'
+
+    .form-group
+      = label :from_address, :city, "City:", :class => 'control-label'
+      = text_field :from_address, :city, :class => 'form-control'
+
+    .form-group
+      = label :from_address, :state, "State:", :class => 'control-label'
+      = select :from_address, :state, options_for_select(us_states)
+
+    .form-group
+      = label :from_address, :zip, "Zipcode:", :class => 'control-label'
+      = text_field :from_address, :zip, :class => 'form-control'
+
+    .form-group
+      = label :from_address, :phone_number, "Phone Number:", :class => 'control-label'
+      = text_field :from_address, :phone_number, :class => 'form-control'
+
+    %div.row
+      %h3 Destination Address
+
+    = hidden_field :to_address, :role, :value => Address::TYPES[1]
+
+    .form-group 
+      = label :to_address, :name, 'Name:', :class => 'control-label'
+      = text_field :to_address, :name, :class => 'form-control'
+
+    .form-group
+      = label :to_address, :company, 'Company Name:', :class => 'control-label'
+      = text_field :to_address, :company, :class => 'form-control'
+    
+    .form-group
+      = label :to_address, :street1, "Street Address:", :class => 'control-label'
+      = text_field :to_address, :street1, :class => 'form-control'
+    
+    .form-group
+      = label :to_address, :city, "City:", :class => 'control-label'
+      = text_field :to_address, :city, :class => 'form-control'
+   
+    .form-group
+      = label :to_address, :state, "State:", :class => 'control-label'
+      = select :to_address, :state, options_for_select(us_states)
+     
+    .form-group
+      = label :to_address, :phone_number, "Phone Number:", :class => 'control-label'
+      = text_field :to_address, :phone_number, :class => 'form-control'
+    
+    .form-group
+      = label :to_address, :zip, "Zipcode:", :class => 'control-label'
+      = text_field :to_address, :zip, :class => 'form-control'
+
+    %div.row
+      %h3 Package information
+ 
+    .form-group
+      = label :shipment, :length, "Length:", :class => 'control-label'
+      = number_field :shipment, :length, :step => 'any', :class => 'form-control'
+   
+    .form-group
+      = label :shipment, :width, "Width:", :class => 'control-label'
+      = number_field :shipment, :width, :step => 'any', :class => 'form-control'
+   
+    .form-group
+      = label :shipment, :height, "Height:", :class => 'control-label'
+      = number_field :shipment, :height, :step => 'any', :class => 'form-control'
+
+    .form-group
+      = label :shipment, :weight, "Weight:", :class => 'control-label'
+      = number_field :shipment, :weight, :step => 'any', :class => 'form-control'
+
+    .form-group
+      = submit_tag "Create Shipment", :class => 'btn btn-simple'
