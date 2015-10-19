@@ -3,6 +3,8 @@ class ShippingProcessor
 
   attr_reader :from_address, :to_address, :parcel, :shipment
 
+  # Note: secret_keys must not be set in this manner.
+  # Preferred way: ENV['easypost_secret_key']
   def initialize
     EasyPost.api_key = 'cyfA9CRdHO4vyUx0DV59gQ'
   end
