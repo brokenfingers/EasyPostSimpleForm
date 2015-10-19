@@ -9,6 +9,7 @@ class ShippingProcessor
     EasyPost.api_key = 'cyfA9CRdHO4vyUx0DV59gQ'
   end
 
+  # This method and the below can be DRYed out
   def create_from_address(attr_hash)
     @from_address = EasyPost::Address.create(
       :company => attr_hash['company'],
